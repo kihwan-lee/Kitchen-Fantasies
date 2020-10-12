@@ -12,7 +12,11 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-  }
+  }, 
+  recipes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Recipe'
+  }]
 }, {timestamps: true});
 
 const User = mongoose.model('User', userSchema);
