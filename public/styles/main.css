@@ -23,10 +23,20 @@ h2 {
     justify-content: center;
     flex-direction: row;
 }
+
+h3 {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
 .mainSection {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
+
 
