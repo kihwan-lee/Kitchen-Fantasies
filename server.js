@@ -13,6 +13,12 @@ const PORT = 4000;
 // Set View Engine
 app.set('view engine', 'ejs');
 
+
+// Controllers
+const userCtrl = require('./controllers/usersControllers');
+const users = require('./models/User');
+
+
 // Middleware
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
@@ -24,6 +30,9 @@ app.use(express.static(`${__dirname}/public`));
 app.get('/', (req, res) => {
     res.render('index')
 })
+
+// User Route
+app.use('/users', userCtrl);
 
 
 // Listener 
