@@ -1,3 +1,32 @@
 body {
-    background-color: rgb(58, 52, 164);
+    margin: 0;
+    font-family: ;
 }
+
+
+#showcase{
+    background: url('../images/pexels-jer-chung-2204771.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h2 {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.mainSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
