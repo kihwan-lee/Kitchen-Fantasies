@@ -3,10 +3,10 @@ const router = express.Router();
 
 const db = require('../models');
 
+
+// 
 router.get('/', (req, res) => {
-  res.render('users/indexUser', {
-    Users: Users
-  });
+  res.render('users');
 });
 
 module.exports = router;

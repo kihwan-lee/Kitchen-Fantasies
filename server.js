@@ -16,7 +16,6 @@ app.set('view engine', 'ejs');
 
 // Controllers
 const userCtrl = require('./controllers/usersControllers');
-const users = require('./models/User');
 
 
 // Middleware
@@ -34,6 +33,10 @@ app.get('/', (req, res) => {
 // User Route
 app.use('/users', userCtrl);
 
+// 404 Route
+app.use('*', (req, res) => {
+    res.render('404');
+});  
 
 // Listener 
 app.listen(PORT, () => {
