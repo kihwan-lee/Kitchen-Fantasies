@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const connectionString = 'mongodb://localhost:27017/project1';
 
-mongoose.connect(PORT, {
+
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
@@ -16,5 +18,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 module.exports = {
-  User: require('./User')
+  User: require('./User'),
+  Recipe: require('./Recipe')
 }
+

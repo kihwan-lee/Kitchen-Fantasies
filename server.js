@@ -4,8 +4,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-// DOTENV
-// require('dotenv').config();
 const PORT = 4000;
 
 // DOTENV
