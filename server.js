@@ -19,6 +19,11 @@ const userCtrl = require('./controllers/usersControllers');
 
 
 // Middleware
+
+// Body Parser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
 
@@ -30,6 +35,7 @@ app.get('/', (req, res) => {
     res.render('index')
 });
 
+// About Us Route
 app.get('/about', (req, res) => {
     res.render('about')
 });
@@ -38,9 +44,9 @@ app.get('/about', (req, res) => {
 app.use('/users', userCtrl);
 
 // 404 Route
-// app.use('*', (req, res) => {
-//     res.render('404');
-// });  
+app.use('*', (req, res) => {
+    res.render('404');
+});  
 
 // Listener 
 app.listen(PORT, () => {
