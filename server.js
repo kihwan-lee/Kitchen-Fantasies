@@ -28,11 +28,11 @@ app.use(express.static(`${__dirname}/public`));
 // Home Route
 app.get('/', (req, res) => {
     res.render('index')
-})
+});
 
 app.get('/about', (req, res) => {
     res.render('about')
-})
+});
 
 // User Route
 app.use('/users', userCtrl);
@@ -45,4 +45,4 @@ app.use('*', (req, res) => {
 // Listener 
 app.listen(PORT, () => {
     console.log(`Your server is on Port ${PORT}`);
-})
+});
