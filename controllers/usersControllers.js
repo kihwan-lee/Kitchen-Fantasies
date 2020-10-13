@@ -14,10 +14,10 @@ router.get('/new', (req, res) => {
   res.render('users/new');
 });
 
-// Create New User Route
+// Create New User 
 router.post('/new', (req, res) => {
 
-  // Query DB to create new user
+  // Query DB to create new user then go to Community
   db.User.create(req.body, (err, newUser) => {
     if (err) return console.log(err);
 

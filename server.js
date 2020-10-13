@@ -18,17 +18,21 @@ app.set('view engine', 'ejs');
 const userCtrl = require('./controllers/usersControllers');
 
 
-// Middleware
+// --------------------- Middleware
 
 // Body Parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+// Method Override
+app.use(methodOverride('_method'));
+
+
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
 
 
-
+// --------------------- Routes
 
 // Home Route
 app.get('/', (req, res) => {
@@ -48,7 +52,9 @@ app.use('*', (req, res) => {
     res.render('404');
 });  
 
-// Listener 
+
+
+// --------------------- Listener 
 app.listen(PORT, () => {
     console.log(`Your server is on Port ${PORT}`);
 });
