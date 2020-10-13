@@ -6,7 +6,10 @@ const db = require('../models');
 
 //User Home Route 
 router.get('/', (req, res) => {
-  res.render('users');
+  db.User.find().then(users => {
+    console.log(users);
+    res.render('users', {users});
+  })
 });
 
 // User List Route
