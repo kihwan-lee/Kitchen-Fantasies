@@ -28,5 +28,31 @@ router.post('/new', (req, res) => {
   });
 });
 
+// Show User When Clicked from Community
+router.get('/:userName', (req, res) => {
+  // Query DB for user
+  db.User.find().then(user => {
+    console.log(user);
+    const context = {
+      user: user,
+    };
+
+    res.render('users/show', context);
+  });
+});
+
+// // Edit User
+router.get('/:userName/edit', (req, res) => {
+  // Query DB for user
+  db.User.find().then(user => {
+    console.log(user);
+
+    const context = {
+      user: user,
+    };
+
+    res.render('users/edit', context);
+  });
+});
 
 module.exports = router;
