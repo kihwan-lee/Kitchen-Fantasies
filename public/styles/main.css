@@ -27,9 +27,9 @@ body {
 }
 
 h1 {
-    font-size: 110px;
-    font-weight: lighter;
-    font-family: 'Varela', sans-serif;
+    font-size: 90px;
+    /* font-weight: lighter; */
+    font-family: 'Playfair Display', serif;
 }
 
 .aboutUs {
