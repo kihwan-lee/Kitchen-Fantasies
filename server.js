@@ -38,9 +38,9 @@ app.get('/about', (req, res) => {
 app.use('/users', userCtrl);
 
 // 404 Route
-app.use('*', (req, res) => {
-    res.render('404');
-});  
+// app.use('*', (req, res) => {
+//     res.render('404');
+// });  
 
 // Listener 
 app.listen(PORT, () => {

@@ -3,66 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <!-- Main Script -->
-    <script src="/scripts/app.js" defer></script>
+    <%- include('../partials/bootstrap') %> 
     <title>Kitchen Fantasies</title>
 </head>
 <body>
-    <!-- Main Nav -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/about">About</a>
-            <a class="nav-link" href="#">Recipes</a>
-            <a class="nav-link" href="./users">Community</a>
-            </div>
-        </div>
-    </nav>
+<!-- Main Nav -->
+    <%- include('../partials/navBar') %>   
 
-
-
-
-
-
-
-
-
-
-
-  <!-- Main Layout -->
-  <!-- <header id="showcase">
-    <h1>Kitchen Fantasies</h1>
-    <a href="#" class="button">Explore</a>
-  </header> -->
-
-  <h2>About Us</h2>
+  <!-- Main About -->
+  <header id="about"></header>
+  <h2 class="aboutUs">About Us</h2>
     <div class="mainSection">
     <section class="sections" id="section-a">
-      <h3>Create New Recipes</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit libero facilis dicta adipisci, minus voluptate. Voluptatibus esse laudantium, nam illum officia dolores, quibusdam nesciunt aliquid illo ab sequi quod impedit?</p>
-    </section>
+      <div class="secA">
+        <h3>What You Get</h3>
+        <img src="/public/images/119-1191277_share-button-share-button-icon-png.png" id="pic" alt="share" class="img-thumbnail">
+          <p class="aboutPara">Delicious & totally doable recipes for all skill sets</p>
+      </div>
+      </section>
     <section class="sections" id="section-b">
-      <h3>Find Old Recipes</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit libero facilis dicta adipisci, minus voluptate. Voluptatibus esse laudantium, nam illum officia dolores, quibusdam nesciunt aliquid illo ab sequi quod impedit?</p>
+      <h3>Share your sectrects</h3>
+        <p class="aboutPara">Have a tasty recipe? Feel free to share with friends!</p>
     </section>
     <section class="sections" id="section-c">
       <h3>Join Us</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit libero facilis dicta adipisci, minus voluptate. Voluptatibus esse laudantium, nam illum officia dolores, quibusdam nesciunt aliquid illo ab sequi quod impedit?</p>
+        <p class="aboutPara">Get access to mouthwatering recpies now!</p>
     </section>
     </div>
-
+ 
 </body>
 </html>

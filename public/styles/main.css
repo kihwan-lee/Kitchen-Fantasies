@@ -3,9 +3,8 @@ body {
     font-family: ;
 }
 
-
-#showcase{
-    background: url('../images/pexels-jer-chung-2204771.jpg');
+#home{
+    background: url('../images/Non-Feature-Bucatini-Chicken-Confit-Recipe-Faro\ \(1\).jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -15,13 +14,29 @@ body {
     justify-content: center;
 }
 
+#about{
+    background: url('../images/Michelin-chick.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
 
-h2 {
+h1 {
+    font-size: 110px;
+}
+
+.aboutUs {
     font-size: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin: 30px;
 }
 
 h3 {
@@ -36,7 +51,17 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
+.aboutPara {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 25px;
+}
 
+#pic {
+    height: 150px;
+    width: 150px;
+}
