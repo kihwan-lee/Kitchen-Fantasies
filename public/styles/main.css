@@ -163,3 +163,9 @@ h3 {
     font-family: 'Playfair Display', serif;
     font-size: larger;
 }
+
+.formSign {
+    font-family: 'Playfair Display', serif;
+    color: black;
+    margin: 60px;
+}
