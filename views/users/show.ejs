@@ -20,15 +20,17 @@
 
   <h2 class="show"><%= user.name %>'s profile</h2> 
 
+  <!-- <button type="submit" class="btn btn-primary">Update!</button> -->
 
   <section>
     <a href="/users/<%= user._id %>/edit">
-      <button>Edit</button>
+      <button type="submit" class="btn btn-primary">Edit</button>
+      <!-- <button>Edit</button> -->
     </a>
+  </section>
 
     <form action="/users/<%= user._id %>?_method=DELETE" method="post">
-      <input type="submit" value="Delete User"/>
+      <input type="submit" class="btn btn-primary" value="Delete User"/>
     </form>
-  </section>
 </body>
 </html>
