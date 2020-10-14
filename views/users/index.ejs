@@ -22,7 +22,7 @@
   <p><%= user.name %></p>
 <% }) %> -->
 
-<ul>
+<ul class="userList">
   <% for(let i = 0; i < users.length; i++){ %>
       <li>
         <a href="/users/<%= users[i]._id %>"><%= users[i].name %></a>

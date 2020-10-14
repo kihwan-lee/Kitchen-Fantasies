@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('../../partials/bootstrap') %> 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
+<title>Kitchen Fantasies</title>
 </head>
 <body>
+<!-- Main Nav -->
+<%- include('../../partials/navBar') %>
+
+<!-- Main About -->
+<header id="userListPage"></header>
+  <h2 class="joinUs">USER SHOW PAGE</h2>
+    <div class="mainSection"></div>
+
   
 
-  <h1><%= user.name %>'s profile</h1> 
+  <h2 class="show"><%= user.name %>'s profile</h2> 
 
 
   <section>
