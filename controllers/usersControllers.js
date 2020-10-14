@@ -29,30 +29,57 @@ router.post('/new', (req, res) => {
 });
 
 // Show User When Clicked from Community
-router.get('/:userName', (req, res) => {
+router.get('/:userId', (req, res) => {
   // Query DB for user
-  db.User.find().then(user => {
-    console.log(user);
+  db.User.findById(req.params.userId, (err, foundUser) => {
     const context = {
-      user: user,
+      user: foundUser,
     };
-
+    console.log(foundUser);
     res.render('users/show', context);
   });
 });
 
+
 // // Edit User
-router.get('/:userName/edit', (req, res) => {
+router.get('/:userId/edit', (req, res) => {
   // Query DB for user
-  db.User.find().then(user => {
-    console.log(user);
+  db.User.findById(req.params.userId, (err, foundUser) => {
+    if (err) return console.log(err);
 
     const context = {
-      user: user,
+      user: foundUser,
     };
 
     res.render('users/edit', context);
+  })
+});
+
+router.put('/:userId', (req, res) => {
+  // VALIDATE DATA (Coming soon)
+  // Query DB to update record by ID
+  db.User.findByIdAndUpdate(
+    req.params.userId,
+    req.body,
+    {new: true},
+    (err, updatedUser) => {
+      if (err) return console.log(err);
+
+      // Redirect to show route
+      res.redirect(`/users/${updatedUser._id}`);
+    }
+  );
+});
+
+router.delete('/:userId', (req, res) => {
+  // Query DB to delete record by ID
+  db.User.findByIdAndDelete(req.params.userId, (err, deletedUser) => {
+    if (err) return console.log(err);
+
+    // Redirect to index route
+    res.redirect('/users');
   });
 });
+
 
 module.exports = router;

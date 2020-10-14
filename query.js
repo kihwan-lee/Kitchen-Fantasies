@@ -9,9 +9,10 @@ const db = require('./models');
 //   user: "5f8495a14d62ac4fa03f42a0"
 // })
 
-db.User.create({
-  name: 'John',
-  email: 'JohnDoe@gmail.com',
-  password: 'JohnDoe1',
-  recipes: "5f8498308b6bf9500e1bbf60"
-})
+// db.User.create({
+//   name: 'John',
+//   email: 'JohnDoe@gmail.com',
+//   password: 'JohnDoe1',
+//   recipes: "5f8498308b6bf9500e1bbf60"
+// })
+

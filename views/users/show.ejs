@@ -1,5 +1,24 @@
-<h1>Show User</h1>
-
-<h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
   
-</h3>
+
+  <h1><%= user.name %>'s profile</h1> 
+
+
+  <section>
+    <a href="/users/<%= user._id %>/edit">
+      <button>Edit</button>
+    </a>
+
+    <form action="/users/<%= user._id %>?_method=DELETE" method="post">
+      <input type="submit" value="Delete User"/>
+    </form>
+  </section>
+</body>
+</html>
