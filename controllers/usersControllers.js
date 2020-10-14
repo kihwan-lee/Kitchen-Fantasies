@@ -66,7 +66,7 @@ router.put('/:userId', (req, res) => {
       if (err) return console.log(err);
 
       // Redirect to show route
-      res.redirect(`/users/${updatedUser._id}`);
+      res.redirect(`/users`);
     }
   );
 });
