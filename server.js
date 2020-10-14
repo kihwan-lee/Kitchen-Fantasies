@@ -16,6 +16,7 @@ app.set('view engine', 'ejs');
 
 // Controllers
 const userCtrl = require('./controllers/usersControllers');
+const recipeCtrl = require('./controllers/recipesControllers');
 
 
 // --------------------- Middleware
