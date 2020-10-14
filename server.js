@@ -48,6 +48,9 @@ app.get('/about', (req, res) => {
 // User Route
 app.use('/users', userCtrl);
 
+// Recipe Route
+app.use('/recipes', recipeCtrl);
+
 // 404 Route
 app.use('*', (req, res) => {
     res.render('404');
