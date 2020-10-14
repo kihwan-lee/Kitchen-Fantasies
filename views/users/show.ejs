@@ -13,24 +13,24 @@
 
 <!-- Main About -->
 <header id="userListPage"></header>
-  <h2 class="joinUs">USER SHOW PAGE</h2>
+  <h2 class="joinUs"><%= user.name %>'s Profile</h2>
     <div class="mainSection"></div>
 
   
 
-  <h2 class="show"><%= user.name %>'s profile</h2> 
-
-  <!-- <button type="submit" class="btn btn-primary">Update!</button> -->
-
-  <section>
+  <!-- <h2 class="show"><%= user.name %>'s profile</h2>  -->
+<div class="butEd">
+  <section class="editButt">
     <a href="/users/<%= user._id %>/edit">
-      <button type="submit" class="btn btn-primary">Edit</button>
-      <!-- <button>Edit</button> -->
+      <button type="submit" class="btn">Edit</button>
     </a>
   </section>
-
     <form action="/users/<%= user._id %>?_method=DELETE" method="post">
-      <input type="submit" class="btn btn-primary" value="Delete User"/>
+      <input type="submit" class="btn" value="Delete User"/>
     </form>
+    <!-- <div class="grayBox"></div> -->
+</div>
+<footer class="footer"></footer>
+</div>
 </body>
 </html>
