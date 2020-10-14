@@ -4,7 +4,7 @@ body {
 }
 
 #home{
-    background: url('../images/Non-Feature-Bucatini-Chicken-Confit-Recipe-Faro\ \(1\).jpg');
+    background: url('../images/desert.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -25,7 +25,7 @@ body {
 }
 
 #about{
-    background: url('../images/Michelin-chick.jpg');
+    background: url('../images/steak.jpg');
     background-size: cover;
     background-position: center;
     height: 45vh;
@@ -47,12 +47,6 @@ body {
     flex-direction: row;
 }
 
-h1 {
-    font-size: 80px;
-    font-weight: lighter;
-    font-family: 'Playfair Display', serif;
-}
-
 .aboutUs {
     font-size: 50px;
     display: flex;
@@ -61,6 +55,17 @@ h1 {
     justify-content: center;
     flex-direction: row;
     margin: 30px;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: lighter;
+    font-family: 'Playfair Display', serif;
+}
+h2 {
+    font-size: 50px;
+    font-weight: lighter;
+    font-family: 'Playfair Display', serif;
 }
 
 h3 {
@@ -96,6 +101,7 @@ h3 {
     justify-content: center;
     flex-direction: row;
     margin: auto;
+    border-radius: 30px;
 }
 
 #join {
@@ -118,4 +124,16 @@ h3 {
     justify-content: center;
     flex-direction: row;
     margin: 30px;
+}
+
+#userListPage {
+    background: url('../images/White-Chocolate-Lobster-and-Caviar-at-Bohemia-Jersey-Large-4.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
