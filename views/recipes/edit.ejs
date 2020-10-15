@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('../../partials/bootstrap') %> 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<title>Kitchen Fantasies</title>
 </head>
 <body>
-    <h1>Edit Page</h1>
+<!-- Main Nav -->
+<%- include('../../partials/navBar') %>  
+
+<header id="recipeIndex"></header>
+<h2 class="aboutUs">Edit Page</h2>
+
+<form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST" class="formSign">
+  <select name="recipe" id="">
+    <% recipes.forEach(recipe => { %>
+      <option value="<%=recipe._id %>"> <%= recipe.name %></option>
+    <% }) %>
+  </select>
+  <div class="form-group">
+      <label for="recipeName">Name</label>
+      <input type="text" class="form-control" id="name" name='name' placeholder="Recipe Name">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="recipeCuisine">Cuisine</label>
+      <input type="text" class="form-control" id="recipeCuisine" name='cuisineType' placeholder="Cuisine">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="recipeCookTime">Cook Time</label>
+      <input type="text" class="form-control" id="recipeCookTime" name='totalCookTime' placeholder="Total Cook Time">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="recipeIngridients">Ingridients</label>
+      <input type="text" class="form-control" id="recipeIngridients" name='ingridients' placeholder="Ingridients">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="recipeInstructions">Instructions</label>
+      <input type="text" class="form-control" id="recipeInstructions" name='instructions' placeholder="Instructions">
+    </div>
+    </div>
+<button type="submit" class="btn">Add it to the list!</button>
+</form>
+
+
 
 
 </body>
