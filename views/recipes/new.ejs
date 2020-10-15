@@ -10,7 +10,13 @@
 <%- include('../../partials/navBar') %>
   <h1>New Recipe</h1>
 
+
   <form action="/recipes/new" method="POST" class="formSign">
+    <select name="user" id="">
+      <% users.forEach(user => { %>
+        <option value="<%=user._id %>"> <%= user.name %></option>
+      <% }) %>
+    </select>
     <div class="form-group">
         <label for="recipeName">Placeholder</label>
         <input type="text" class="form-control" id="name" name='name' placeholder="Recipe Name">

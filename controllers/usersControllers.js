@@ -31,10 +31,11 @@ router.post('/new', (req, res) => {
 // Show User When Clicked from Community
 router.get('/:userId', (req, res) => {
   // Query DB for user
-  db.User.findById(req.params.userId, (err, foundUser) => {
+  db.User.findById(req.params.userId)
+  .populate('recipes').then(foundUser => {
     const context = {
-      user: foundUser,
-    };
+      user: foundUser,};
+  
     console.log(foundUser);
     res.render('users/show', context);
   });

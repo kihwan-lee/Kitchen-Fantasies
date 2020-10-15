@@ -16,5 +16,11 @@
     <li><%= recipe.instructions %></li>
   </ul>
 
+  <a href="/recipes/<%= recipe._id %>/edit">
+    <button type="submit" class="btn newRec">Edit</button>
+  </a>
+  <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="post">
+    <button type="submit" class="btn newRec">Delete</button>
+  </form>
 </body>
 </html>
