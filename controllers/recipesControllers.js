@@ -13,15 +13,10 @@ router.get('/', (req, res) => {
   });
 });
 
-// Get Show
-router.get('/:recipeId', (req, res) => {
-  db.Recipe.findById(req.params.recipeId, (err,foundRecipe) => {
-    const context = {
-      recipe: foundRecipe,
-    };
-    res.render('recipes/show', context);
-  });
-});
+// Get New Recipe Route
+router.get('/new', (req, res) => {
+  res.render('recipes/new')
+})
 
 // Create New Recipe
 router.post('/new', (req, res) => {
