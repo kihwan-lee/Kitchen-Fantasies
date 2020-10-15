@@ -12,27 +12,14 @@
 <%- include('../../partials/navBar') %>   
 <h2 class="aboutUs">Recipe List</h2>
 
+<a href="/recipes/new">
+  <button type="submit" class="btn">Create A New Recipe!</button>
+</a>
+
+
 <% recipes.forEach(recipe => { %>
   <a href="/recipes/<%=recipe._id%>"><%= recipe.name %> </a>
 <% }) %> 
-
-<form action="/users/new" method="POST" class="formSign">
-  <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" name='name' placeholder="Your Name">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name='email' placeholder="Email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name='password' placeholder="Password">
-    </div>
-    </div>
-<button type="submit" class="btn">Welcome!</button>
-
 
 </body>
 </html>

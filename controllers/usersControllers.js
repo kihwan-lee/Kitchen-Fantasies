@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   db.User.find().then(users => {
     console.log(users);
     res.render('users', {users});
-  })
+  });
 });
 
 // User List Route
@@ -52,11 +52,10 @@ router.get('/:userId/edit', (req, res) => {
     };
 
     res.render('users/edit', context);
-  })
+  });
 });
 
 router.put('/:userId', (req, res) => {
-  // VALIDATE DATA (Coming soon)
   // Query DB to update record by ID
   db.User.findByIdAndUpdate(
     req.params.userId,

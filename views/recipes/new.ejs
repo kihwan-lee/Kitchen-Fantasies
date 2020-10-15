@@ -6,6 +6,34 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>New Page</h1>
+  <!-- Main Nav -->
+<%- include('../../partials/navBar') %>
+  <h1>New Recipe</h1>
+
+  <form action="/recipes/new" method="POST" class="formSign">
+    <div class="form-group">
+        <label for="recipeName">Placeholder</label>
+        <input type="text" class="form-control" id="name" name='name' placeholder="Recipe Name">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="recipeCuisine">Cuisine</label>
+        <input type="text" class="form-control" id="recipeCuisine" name='recipeCuisine' placeholder="Cuisine">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="recipeCookTime">Cook Time</label>
+        <input type="text" class="form-control" id="recipeCookTime" name='recipeCookTime' placeholder="Total Cook Time">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="recipeIngridients">Ingridients</label>
+        <input type="text" class="form-control" id="recipeCookTime" name='recipeIngridients' placeholder="Ingridients">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="recipeInstructions">Instructions</label>
+        <input type="text" class="form-control" id="recipeInstructions" name='recipeInstructions' placeholder="Instructions">
+      </div>
+      </div>
+  <button type="submit" class="btn">Add it to the list!</button>
+  
 </body>
 </html>
