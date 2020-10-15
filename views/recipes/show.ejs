@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('../../partials/bootstrap') %> 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<title>Kitchen Fantasies</title>
 </head>
 <body>
-  <h1>Show Recipe Page</h1>
+<!-- Main Nav -->
+<%- include('../../partials/navBar') %>  
+
+<header id="recipeIndex"></header>
+<h2 class="aboutUs">Show Recipe Page</h2>
 
   <h3><%= recipe.name %></h3>
   <ul>
