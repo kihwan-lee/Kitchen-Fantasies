@@ -15,7 +15,10 @@ router.get('/', (req, res) => {
 
 // Get New Recipe Route
 router.get('/new', (req, res) => {
-  res.render('recipes/new')
+  db.User.find().then(users => {
+    
+    res.render('recipes/new', {users});
+  })
 })
 
 // Create New Recipe
@@ -32,21 +35,54 @@ router.post('/new', (req, res) => {
     user:req.body.user
     }, (err, newRecipe) => {
     if (err) return console.log(err);
-
-    console.log(newRecipe);
-    res.redirect('/recipes');
+    
+    db.User.findById(req.body.user, (err, user) => {
+      if (err) return console.log(err);
+      console.log(user);
+      
+      user.recipes.push(newRecipe._id);
+      user.save();
+      console.log(newRecipe);
+      res.redirect('/recipes');
+    });
   });
 });
 
+// Show Recipe
 router.get('/:recipeId', (req, res) => {
-  // Query DB for user
+  // Query DB for recipe
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
     const context = {
       recipe: foundRecipe,
     };
-    console.log(foundRecipe);
+    // console.log(foundRecipe);
     res.render('recipes/show', context);
   });
 });
+
+// Edit Recipe
+router.get('/:recipeId/edit', (req, res) => {
+  db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
+    const context = {
+      recipe: foundRecipe,
+    };
+    // console.log(foundRecipe);
+  res.render('recipes/edit', context);
+  });
+});
+
+// Delete Recipe
+router.delete('/:recipeId', (req, res) => {
+  // Query DB to delete record by ID
+  db.Recipe.findByIdAndDelete(req.params.recipeId, (err, deletedRecipe) => {
+    if (err) return console.log(err);
+
+    console.log(deletedRecipe);
+
+    // Redirect to index route
+    res.redirect('/recipes');
+  });
+});
+
 
 module.exports = router;
