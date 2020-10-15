@@ -11,5 +11,10 @@
 <!-- Main Nav -->
 <%- include('../../partials/navBar') %>   
 <h2>Recipe List</h2>
+
+<% recipes.forEach(recipe => { %>
+  <a href="/recipes/<%=recipe._id%>"><%= recipe.name %> </a>
+<% }) %> 
+
 </body>
 </html>
