@@ -1,4 +1,4 @@
-const db = require('./models');
+// const db = require('./models');
 
 // db.Recipe.create({
 //   name: 'Mac N Cheese',
@@ -15,4 +15,3 @@ const db = require('./models');
 //   password: 'JohnDoe1',
 //   recipes: "5f8498308b6bf9500e1bbf60"
 // })
-
