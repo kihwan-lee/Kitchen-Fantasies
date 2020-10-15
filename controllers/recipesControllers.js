@@ -12,16 +12,24 @@ router.get('/', (req, res) => {
   })
 });
 
-// router.get('/', (req, res) => {
-//   // Get all recipes
-//   db.Recipe.find({}, (err, allRecipes) => {
-//     console.log(Recipe);
-//     if (err) return console.log(err);
+router.get('/:recipeId', (req, res) => {
+  db.Recipe.findById(req.params.recipeId, (err,foundRecipe) => {
+    const context = {
+      recipe: foundRecipe,
+    };
+    res.render('recipes/show', context);
+  })
+})
 
-//     const context = {allRecipes};
-
-//     res.render('recipes/index', context);
-//   })
-// });
+router.get('/:userId', (req, res) => {
+  // Query DB for user
+  db.User.findById(req.params.userId, (err, foundUser) => {
+    const context = {
+      user: foundUser,
+    };
+    console.log(foundUser);
+    res.render('users/show', context);
+  });
+});
 
 module.exports = router;
