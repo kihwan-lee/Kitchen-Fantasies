@@ -12,6 +12,11 @@
 <%- include('../../partials/navBar') %>   
 <h2 class="aboutUs">Recipe List</h2>
 
+<a href="/recipes/new">
+  <button type="submit" class="btn">Create A New Recipe!</button>
+</a>
+
+
 <% recipes.forEach(recipe => { %>
   <a href="/recipes/<%=recipe._id%>"><%= recipe.name %> </a>
 <% }) %> 
