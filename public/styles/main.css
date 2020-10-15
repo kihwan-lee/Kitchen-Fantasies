@@ -92,6 +92,7 @@ h3 {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    color: black;
     margin: 20px;
 }
 
@@ -143,6 +144,10 @@ h3 {
     margin: 30px;
 }
 
+.joinNow {
+    color: black;
+}
+
 #userListPage {
     background: url('../images/White-Chocolate-Lobster-and-Caviar-at-Bohemia-Jersey-Large-4.jpg');
     background-size: cover;
@@ -192,6 +197,10 @@ h3 {
     margin: 25px;
 }
 
+.newRec {
+    margin: 25px;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -203,3 +212,16 @@ h3 {
 .textColor {
     color: black;
 }
+
+#recipeIndex {
+    background: url('../images/Ganache.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+

@@ -1,6 +1,12 @@
-const db = require('./models');
+// const db = require('./models');
 
 
+// db.User.create({
+//   name: 'John',
+//   email: 'JohnDoe@gmail.com',
+//   password: 'JohnDoe1',
+//   recipes: "5f8498308b6bf9500e1bbf60"
+// })
 
 
 db.Recipe.create({
