@@ -5,6 +5,7 @@ const router = express.Router();
 // Database
 const db = require('../models');
 
+// Get Recipe
 router.get('/', (req, res) => {
   db.Recipe.find().then(recipes => {
     console.log(recipes);
@@ -12,23 +13,25 @@ router.get('/', (req, res) => {
   })
 });
 
+// Get Show
 router.get('/:recipeId', (req, res) => {
   db.Recipe.findById(req.params.recipeId, (err,foundRecipe) => {
     const context = {
       recipe: foundRecipe,
     };
-    res.render('recipes/show', context);
+    res.render('recipes/new', context);
   })
 })
 
-router.get('/:userId', (req, res) => {
-  // Query DB for user
-  db.User.findById(req.params.userId, (err, foundUser) => {
-    const context = {
-      user: foundUser,
-    };
-    console.log(foundUser);
-    res.render('users/show', context);
+// POST create
+router.post('/', (req, res) => {
+  console.log(req.body);
+
+  // Query DB to create new author
+  db.Recipe.create(req.body, (err, newRecipe) => {
+    if (err) return console.log(err);
+
+    res.redirect('/recipes');
   });
 });
 
