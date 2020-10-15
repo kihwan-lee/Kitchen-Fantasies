@@ -119,7 +119,7 @@ h3 {
     justify-content: center;
     flex-direction: row;
     margin: auto;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 #join {
@@ -225,3 +225,16 @@ h3 {
     margin-bottom: 10px;
 }
 
+.recList {
+    margin: 50px;
+    font-family: 'Playfair Display', serif;
+    color: black;
+}
+
+.recNew {
+   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}

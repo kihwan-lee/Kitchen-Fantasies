@@ -13,15 +13,19 @@
 
 <header id="recipeIndex"></header>
 <h2 class="aboutUs">Recipe List</h2>
+  
 
 <a href="/recipes/new">
-  <button type="submit" class="btn float-right">Create A New Recipe!</button>
+<button type="submit" id="recNew" class="btn recNew">Create A New Recipe!</button>
 </a>
 
 
-<% recipes.forEach(recipe => { %>
-  <a href="/recipes/<%=recipe._id%>"><%= recipe.name %> </a>
-<% }) %> 
+  <% recipes.forEach(recipe => { %>
+    <a href="/recipes/<%=recipe._id%>" class="recList"><%= recipe.name %> </a>
+  <% }) %> 
+
+
+
 
 <footer class="footer"></footer>
 </body>
