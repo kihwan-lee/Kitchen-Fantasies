@@ -24,14 +24,14 @@ router.get('/:recipeId', (req, res) => {
 })
 
 // POST create
-router.post('/', (req, res) => {
+router.post('/recipes/new', (req, res) => {
   console.log(req.body);
 
   // Query DB to create new author
   db.Recipe.create(req.body, (err, newRecipe) => {
     if (err) return console.log(err);
 
-    res.redirect('/recipes');
+    res.redirect('/recipes/index');
   });
 });
 
