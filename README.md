@@ -3,14 +3,15 @@
 ![img](public/images/pic1.png)
 ---
 # User Story
----
-## Game On!
-- The user will have the option to name the character. Clicking the start button will begin the game.
-- Once started the timer will then begin to increase vaules at different rates and amounts.
-- Main objective to the game is to keep the values of eat, sleep and play below 10.
-- Each time a button is press, a taco for food, a moon for sleep and a weight will animate and reduce the value by 1.
-- Failure to do so results to your character to die.
-- If successful, your character will evolve into Kadabra then Alakazam.
+As a food enthusiast, I want to be able to see proven recipes that I can use, store some of my own recipes that I may have forgotten certain elements of, and share them to my community. 
+
+Each new user will be able create an account by providing a name, email address, and password. 
+
+Once signed in, the user will land on their profile page page of the app. The user will have options to delete their account, update their info, or get started and create a new recipe! 
+
+When creating a new recipe, the user will fill in the name, cuisine, cook time, ingredients, and instructions of the recipe. 
+
+Once created, the recipe will be shown in the recipe list page. The user can navigate to other recipes made by other users and update or delete those recipes. Each recipe made by the user will also be shown in the user profile page. 
 
 # Functionality
 When the user clicks on the start game button. They will be directed to the Tamagatchi device page. At this page the timer will begin and display the seconds and mintues. The time is what drives this game. 
