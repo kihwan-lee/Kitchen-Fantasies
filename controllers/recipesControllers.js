@@ -71,6 +71,15 @@ router.get('/:recipeId/edit', (req, res) => {
   });
 });
 
+// PUT Update
+router.put('/:recipeId', (req, res) => { 
+  db.Recipe.findByIdAndUpdate(req.params.recipeId, req.body, {new: true}, (err, updatedRecipe) => {
+    if (err) return console.log(err);
+
+    res.redirect('/recipes');
+  });
+});
+
 // Delete Recipe
 router.delete('/:recipeId', (req, res) => {
   // Query DB to delete record by ID
