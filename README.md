@@ -13,24 +13,6 @@ When creating a new recipe, the user will fill in the name, cuisine, cook time, 
 
 Once created, the recipe will be shown in the recipe list page. The user can navigate to other recipes made by other users and update or delete those recipes. Each recipe made by the user will also be shown in the user profile page. 
 
-# Functionality
-When the user clicks on the start game button. They will be directed to the Tamagatchi device page. At this page the timer will begin and display the seconds and mintues. The time is what drives this game. 
-
-Eat: increases value by 1 every 5 sec
-Sleep: increases value by 2 every 10 sec
-Play: increases value by 3 every 15 sec
-Age: increases value by 1 every  15 sec
-
-Eat Button: -1, 
-Sleep Button: -1, 
-Play Button: -1
-
-Abra will evolve to Kadabra once age reaches 5
-Kadabra will evolve to Alakazam once age is 10
-
-
-The game will end if the values exceed 10. The user will then be alerted with a reason that the character died. Then the page will reload and take you back to the begining.
-
 # Wireframes
 ![img](public/images/pic2.png)
 ![img](public/images/pic3.png)
