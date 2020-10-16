@@ -186,7 +186,6 @@ h3 {
 
 .butEd {
     display: flex;
-    display: flex;
     align-items: center;
     justify-content: center;
     /* position: absolute;
@@ -198,6 +197,9 @@ h3 {
 }
 
 .newRec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 25px;
 }
 
@@ -232,9 +234,39 @@ h3 {
 }
 
 .recNew {
-   
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+}
+
+.label1 {
+    list-style: none; 
+}
+
+.none {
+    font-weight: normal;
+}
+
+.textRec {
+    font-family: 'Playfair Display', serif;
+    color: black;
+    font-size: 24px;
+}
+
+.centRec {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.recBlack {
+    font-family: 'Playfair Display', serif;
+    color: black;
+    margin: 20px;
+}
+
+#marEd {
+    margin: 25px;
 }
