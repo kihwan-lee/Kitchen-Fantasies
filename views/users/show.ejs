@@ -18,11 +18,8 @@
 
   
 
-  <!-- <h2 class="show"><%= user.name %>'s profile</h2>  -->
-  <% user.recipes.forEach(recipe => { %>
-    <a href="/recipes/<%= recipe._id %>"><%= recipe.name %></a>
-    
-  <% }); %>
+
+
 <div class="butEd">
   <section class="editButt">
     <a href="/users/<%= user._id %>/edit">
@@ -36,6 +33,12 @@
     <button type="submit" class="btn newRec">Create A New Recipe!</button>
   </a>
 </div>
+
+  <!-- <h2 class="show"><%= user.name %>'s profile</h2>  -->
+  <% user.recipes.forEach(recipe => { %>
+    <a href="/recipes/<%= recipe._id %>" class="recBlack"><%= recipe.name %></a>  <% }); %>
+
+
 <footer class="footer"></footer>
 </div>
 </body>
