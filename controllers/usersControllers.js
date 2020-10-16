@@ -34,7 +34,8 @@ router.get('/:userId', (req, res) => {
   db.User.findById(req.params.userId)
   .populate('recipes').then(foundUser => {
     const context = {
-      user: foundUser,};
+      user: foundUser,
+    };
   
     console.log(foundUser);
     res.render('users/show', context);

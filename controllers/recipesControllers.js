@@ -54,6 +54,7 @@ router.get('/:recipeId', (req, res) => {
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
     const context = {
       recipe: foundRecipe,
+      
     };
     // console.log(foundRecipe);
     res.render('recipes/show', context);
