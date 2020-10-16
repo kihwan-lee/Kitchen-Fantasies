@@ -1,6 +1,6 @@
 # Kitchen Fantasies
 ---
-![img](./images/pic1.png)
+![img](public/images/pic1.png)
 ---
 # User Story
 ---
@@ -31,15 +31,15 @@ Kadabra will evolve to Alakazam once age is 10
 The game will end if the values exceed 10. The user will then be alerted with a reason that the character died. Then the page will reload and take you back to the begining.
 
 # Wireframes
-![img](./images/pic2.png)
-![img](./images/pic3.png)
-![img](./images/pic4.png)
-![img](./images/pic5.png)
-![img](./images/pic6.png)
-![img](./images/pic7.png)
-![img](./images/pic8.png)
-![img](./images/pic9.png)
-![img](./images/pic10.png)
+![img](public/images/pic2.png)
+![img](public/images/pic3.png)
+![img](public/images/pic4.png)
+![img](public/images/pic5.png)
+![img](public/images/pic6.png)
+![img](public/images/pic7.png)
+![img](public/images/pic8.png)
+![img](public/images/pic9.png)
+![img](public/images/pic10.png)
 
 # Resources
 - https://getbootstrap.com/docs/4.5/getting-started/introduction/
