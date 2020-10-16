@@ -16,13 +16,13 @@
 
   
   <form action="/recipes/new" method="POST" class="formSign">
-    <select name="user" id="">
+    <select name="user" id="userBar">
       <% users.forEach(user => { %>
         <option value="<%=user._id %>"> <%= user.name %></option>
       <% }) %>
     </select>
     <div class="form-group">
-        <label for="recipeName">Name</label>
+        <label for="recipeName">Recipe Name</label>
         <input type="text" class="form-control" id="name" name='name' placeholder="Recipe Name">
     </div>
     <div class="form-row">
@@ -45,6 +45,6 @@
       </div>
   <button type="submit" class="btn">Add it to the list!</button>
 </form>
-<footer class="footer"></footer>
+<!-- <footer class="footer"></footer> -->
 </body>
 </html>
