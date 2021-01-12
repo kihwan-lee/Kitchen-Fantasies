@@ -15,6 +15,9 @@
 <h2 class="aboutUs"><%= recipe.name %></h2>
 
 <div class="butEd">
+  <a href="/recipes">
+    <button type="submit" id="recNew" class="btn">Back to All Recipes</button>
+  </a>
 <a href="/recipes/<%= recipe._id %>/edit">
   <button type="submit" id="recNew" class="btn">Edit</button>
 </a>
@@ -24,12 +27,12 @@
 </div>
 <div>
   <ul class="textRec">
-    <li class="label1">Cuisine: <span class="none"><%= recipe.cuisineType %></span></li>
+    <li>Cuisine: <%= recipe.cuisineType %></li>
     <li>Total Cook Time: <%= recipe.totalCookTime %></li>
     <li>Ingredients: <%= recipe.ingridients %></li>
     <li>Instructions: <%= recipe.instructions %></li>
   </ul>
 </div>
-  <footer class="footer"></footer>
+  <!-- <footer class="footer"></footer> -->
 </body>
 </html>
