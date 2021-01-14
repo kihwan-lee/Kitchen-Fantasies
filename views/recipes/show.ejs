@@ -13,6 +13,8 @@
 
 <header id="recipeIndex"></header>
 <h2 class="aboutUs"><%= recipe.name %></h2>
+<!-- Figure out how to how recipe owner's name showing -->
+<h4 class="recipeOwner">Recipe Owner: TBD </h4>
 
 <div class="butEd">
 <a href="/recipes/<%= recipe._id %>/edit">
@@ -23,6 +25,7 @@
 </form>
 </div>
 <div>
+  
   <ul class="textRec">
     <li class="label1">Cuisine: <span class="none"><%= recipe.cuisineType %></span></li>
     <li>Total Cook Time: <%= recipe.totalCookTime %></li>
