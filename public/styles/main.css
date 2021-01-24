@@ -272,7 +272,6 @@ h3 {
     margin: 25px;
 }
 
-<<<<<<< HEAD
 .recipeOwner {
     font-size: 20px;
     display: flex;
@@ -281,8 +280,4 @@ h3 {
     justify-content: center;
     flex-direction: row;
     margin: 30px;
-=======
-#userBar {
-    margin-bottom: 20px;
->>>>>>> cbd5e26bb51f1d5721fb138e658b8cb833fb899e
 }
