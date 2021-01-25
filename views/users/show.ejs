@@ -16,10 +16,6 @@
   <h2 class="joinUs"><%= user.name %>'s Profile</h2>
     <div class="mainSection"></div>
 
-  
-
-
-
 <div class="butEd">
   <section class="editButt">
     <a href="/users/<%= user._id %>/edit">
@@ -34,12 +30,12 @@
   </a>
 </div>
 
-  <!-- <h2 class="show"><%= user.name %>'s profile</h2>  -->
+<!-- User's recipes should be shown here -->
   <% user.recipes.forEach(recipe => { %>
     <a href="/recipes/<%= recipe._id %>" class="recBlack"><%= recipe.name %></a>  <% }); %>
 
 
-<footer class="footer"></footer>
+<!-- <footer class="footer"></footer> -->
 </div>
 </body>
 </html>

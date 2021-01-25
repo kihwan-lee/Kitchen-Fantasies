@@ -272,6 +272,12 @@ h3 {
     margin: 25px;
 }
 
-#userBar {
-    margin-bottom: 20px;
+.recipeOwner {
+    font-size: 20px;
+    display: flex;
+    font-family: 'Playfair Display', serif;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 30px;
 }

@@ -3,12 +3,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const favicon = require('serve-favicon');
+
 
 const PORT = 4000;
 
-// DOTENV
-// require('dotenv').config();
-// const PORT = process.env.PORT;
 
 // Set View Engine
 app.set('view engine', 'ejs');
@@ -17,6 +16,7 @@ app.set('view engine', 'ejs');
 // Controllers
 const userCtrl = require('./controllers/usersControllers');
 const recipeCtrl = require('./controllers/recipesControllers');
+
 
 
 // --------------------- Middleware
@@ -32,8 +32,14 @@ app.use(methodOverride('_method'));
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
 
+// Favicon Upload
+app.use(favicon(`${__dirname}/public/images/favicon.ico`));
+
+
+
 
 // --------------------- Routes
+
 
 // Home Route
 app.get('/', (req, res) => {
@@ -44,6 +50,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about')
 });
+
+// Login Route
+app.get('/login', (req, res) => {
+    res.render('login')
+});
+
 
 // User Route
 app.use('/users', userCtrl);
