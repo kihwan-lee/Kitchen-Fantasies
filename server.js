@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const favicon = require('serve-favicon');
 
 
 const PORT = 4000;
@@ -31,6 +32,9 @@ app.use(methodOverride('_method'));
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
 
+// Favicon Upload
+app.use(favicon(`${__dirname}/public/images/favicon.ico`));
+
 
 
 
@@ -45,6 +49,11 @@ app.get('/', (req, res) => {
 // About Us Route
 app.get('/about', (req, res) => {
     res.render('about')
+});
+
+// Login Route
+app.get('/login', (req, res) => {
+    res.render('login')
 });
 
 
