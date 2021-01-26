@@ -1,12 +1,13 @@
 // Modules
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
+const session = require('express-session');
+require('dotenv').config();
+const PORT = process.env.PORT || 4000
+const app = express();
 
-
-const PORT = 4000;
 
 
 // Set View Engine
@@ -14,8 +15,7 @@ app.set('view engine', 'ejs');
 
 
 // Controllers
-const userCtrl = require('./controllers/usersControllers');
-const recipeCtrl = require('./controllers/recipesControllers');
+const ctrl = require('./controllers');
 
 
 
@@ -32,8 +32,20 @@ app.use(methodOverride('_method'));
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
 
+// Express Session
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,  // Only Save Session if Property Changes
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24  //expires in 24 hours
+    }
+}));
+
 // Favicon Upload
 app.use(favicon(`${__dirname}/public/images/favicon.ico`));
+
+
 
 
 
@@ -58,10 +70,12 @@ app.get('/login', (req, res) => {
 
 
 // User Route
-app.use('/users', userCtrl);
+app.use('/users', ctrl.users);
 
 // Recipe Route
-app.use('/recipes', recipeCtrl);
+app.use('/recipes', ctrl.recipes);
+
+app.use('/auth', ctrl.auth);
 
 // 404 Route
 app.use('*', (req, res) => {
