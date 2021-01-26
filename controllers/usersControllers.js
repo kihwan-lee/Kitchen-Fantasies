@@ -45,6 +45,10 @@ router.get('/:userId', (req, res) => {
 
 // // Edit User
 router.get('/:userId/edit', (req, res) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  };
+
   // Query DB for user
   db.User.findById(req.params.userId, (err, foundUser) => {
     if (err) return console.log(err);
@@ -73,6 +77,9 @@ router.put('/:userId', (req, res) => {
 });
 
 router.delete('/:userId', (req, res) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  };
   // Query DB to delete record by ID
   db.User.findByIdAndDelete(req.params.userId, (err, deletedUser) => {
     if (err) return console.log(err);

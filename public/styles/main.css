@@ -185,6 +185,24 @@ h3 {
     background-color: #ececec;
 }
 
+.diffbtn {
+    border: 0;
+    background-color: transparent;
+    font-size: 1em;
+    display: block;
+    padding: .5rem;
+    font-family: 'Playfair Display', serif;
+    color: grey;
+
+
+}
+.diffbtn:hover :focus {
+    color: black;
+    outline: none;
+    border: none;
+}
+
+
 .butEd {
     display: flex;
     align-items: center;

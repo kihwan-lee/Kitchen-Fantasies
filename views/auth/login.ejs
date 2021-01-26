@@ -3,24 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<%- include('../../partials/bootstrap') %>
+<%- include('../../partials/bootstrap') %> 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
 <title>Kitchen Fantasies</title>
 </head>
 <body>
+
 <!-- Main Nav -->
 <%- include('../../partials/navBar') %>   
 
   <!-- Main About -->
   <header id="join"></header>
-    <h2 class="joinUs">JOIN US</h2>
+    <h2 class="joinUs">LOGIN</h2>
       <div class="mainSection"></div>
 
-  <form action="/users/new" method="POST" class="formSign">
-      <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" name='name' placeholder="Your Name">
-      </div>
+  <form action="/auth/login" method="POST" class="formSign">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="email">Email</label>
@@ -31,10 +28,9 @@
           <input type="password" class="form-control" id="password" name='password' placeholder="Password">
         </div>
         </div>
-    <button type="submit" class="btn">Welcome!</button>
+    <button type="submit" class="btn">Welcome Back!</button>
   </form>
-
-  <a href="/login" class="btn">Already Have an Account?</a>
+  <a href="/auth/register" class="btn">New User?</a>
 
 </body>
 </html>

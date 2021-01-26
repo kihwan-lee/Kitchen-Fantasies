@@ -15,6 +15,9 @@ router.get('/', (req, res) => {
 
 // Get New Recipe Route
 router.get('/new', (req, res) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/users');
+  };
   db.User.find().then(users => {
     
     res.render('recipes/new', {users});
@@ -23,6 +26,10 @@ router.get('/new', (req, res) => {
 
 // Create New Recipe
 router.post('/new', (req, res) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/users');
+  };
+
   let ingridArr = req.body.ingridients.split(',');
   let instructArr = req.body.instructions.split(',');
 
@@ -63,6 +70,10 @@ router.get('/:recipeId', (req, res) => {
 
 // Edit Recipe
 router.get('/:recipeId/edit', (req, res) => {
+  if (!req.session.currentUser) {
+    res.redirect('/auth/login');
+  };
+
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
     const context = {
       recipe: foundRecipe,
@@ -83,6 +94,9 @@ router.put('/:recipeId', (req, res) => {
 
 // Delete Recipe
 router.delete('/:recipeId', (req, res) => {
+  if (!req.session.currentUser) {
+    res.redirect('/auth/login');
+  };
   // Query DB to delete record by ID
   db.Recipe.findByIdAndDelete(req.params.recipeId, (err, deletedRecipe) => {
     if (err) return console.log(err);
