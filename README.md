@@ -1,4 +1,7 @@
 # Kitchen Fantasies
+
+# Getting Started
+You can access the application by clicking here.
 ---
 ![img](public/images/pic1.png)
 ---
