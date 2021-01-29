@@ -6,6 +6,7 @@ You can access the application by clicking here.
 ## Technologies Used
  - EJS
  - CSS3
+ - Bootstrap
  - JavaScript
  - Node
  - Express
