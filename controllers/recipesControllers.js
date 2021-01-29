@@ -30,6 +30,8 @@ router.post('/new', (req, res) => {
     return res.redirect('/users');
   };
 
+  req.body.user = req.session.currentUser;
+
   let ingridArr = req.body.ingridients.split(',');
   let instructArr = req.body.instructions.split(',');
 
@@ -59,19 +61,21 @@ router.post('/new', (req, res) => {
 router.get('/:recipeId', (req, res) => {
   // Query DB for recipe
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
+
+  db.User.findById(foundRecipe.user, (err, foundUser) => {
     const context = {
       recipe: foundRecipe,
-      
+      user: foundUser,
     };
-    // console.log(foundRecipe);
     res.render('recipes/show', context);
+  });  
   });
 });
 
 // Edit Recipe
 router.get('/:recipeId/edit', (req, res) => {
   if (!req.session.currentUser) {
-    res.redirect('/auth/login');
+    return res.redirect('/auth/login');
   };
 
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
@@ -95,7 +99,7 @@ router.put('/:recipeId', (req, res) => {
 // Delete Recipe
 router.delete('/:recipeId', (req, res) => {
   if (!req.session.currentUser) {
-    res.redirect('/auth/login');
+    return res.redirect('/auth/login');
   };
   // Query DB to delete record by ID
   db.Recipe.findByIdAndDelete(req.params.recipeId, (err, deletedRecipe) => {
