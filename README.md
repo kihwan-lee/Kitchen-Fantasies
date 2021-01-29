@@ -1,4 +1,5 @@
 # Kitchen Fantasies
+Kitchen Fantasies is a full stack MEN application that connects people and their best homemade recipes to a community group.
 
 ## Getting Started
 You can access the application by clicking here.
