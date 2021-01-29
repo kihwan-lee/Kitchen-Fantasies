@@ -61,12 +61,14 @@ router.post('/new', (req, res) => {
 router.get('/:recipeId', (req, res) => {
   // Query DB for recipe
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
+
+  db.User.findById(foundRecipe.user, (err, foundUser) => {
     const context = {
       recipe: foundRecipe,
-      
+      user: foundUser,
     };
-    // console.log(foundRecipe);
     res.render('recipes/show', context);
+  });  
   });
 });
 
