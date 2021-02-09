@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
 const session = require('express-session');
 require('dotenv').config();
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 
@@ -28,6 +28,8 @@ app.use(bodyParser.json());
 // Method Override
 app.use(methodOverride('_method'));
 
+// Logging middleware passing our own configuration
+app.use(morgan(':method :url'));
 
 // Serve Static Assets (CSS, JS, IMAGES)
 app.use(express.static(`${__dirname}/public`));
