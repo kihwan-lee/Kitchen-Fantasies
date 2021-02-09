@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
 const session = require('express-session');
+const morgan = require('morgan');
 require('dotenv').config();
 const PORT = process.env.PORT || 4000;
 const app = express();
