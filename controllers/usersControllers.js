@@ -2,14 +2,19 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../models');
+const { update } = require('../models/User');
 
 
 //User Home Route 
 router.get('/', (req, res) => {
-  db.User.find().then(users => {
+  db.User.find()
+  .then(users => {
     console.log(users);
     res.render('users', {users});
-  });
+  })
+  .catch((err) => {
+    console.log(err);
+  })
 });
 
 // User List Route
@@ -21,10 +26,13 @@ router.get('/new', (req, res) => {
 router.post('/new', (req, res) => {
 
   // Query DB to create new user then go to Community
-  db.User.create(req.body, (err, newUser) => {
-    if (err) return console.log(err);
-
+  db.User.create(req.body)
+  .then((newUser) => {
+    console.log(newUser);
     res.redirect('/users');
+  })
+  .catch((err) => {
+    console.log(err);
   });
 });
 
@@ -32,14 +40,19 @@ router.post('/new', (req, res) => {
 router.get('/:userId', (req, res) => {
   // Query DB for user
   db.User.findById(req.params.userId)
-  .populate('recipes').then(foundUser => {
+  .populate('recipes')
+  .then(foundUser => {
     const context = {
       user: foundUser,
     };
   
     console.log(foundUser);
     res.render('users/show', context);
-  });
+  })
+  .catch((err) => {
+    console.log(err)
+    res.render('404');
+  })
 });
 
 
@@ -50,14 +63,19 @@ router.get('/:userId/edit', (req, res) => {
   };
 
   // Query DB for user
-  db.User.findById(req.params.userId, (err, foundUser) => {
-    if (err) return console.log(err);
+  db.User.findById(req.params.userId)
+  .then((foundUser) => {
+    console.log(foundUser);
 
     const context = {
       user: foundUser,
     };
 
     res.render('users/edit', context);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.render('404');
   });
 });
 
@@ -66,13 +84,17 @@ router.put('/:userId', (req, res) => {
   db.User.findByIdAndUpdate(
     req.params.userId,
     req.body,
-    {new: true},
-    (err, updatedUser) => {
-      if (err) return console.log(err);
-
+    {new: true}
+    .then((updatedUser) => {
+      console.log(updatedUser);
+    
       // Redirect to show route
       res.redirect(`/users`);
-    }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.render('404');
+    })
   );
 });
 
@@ -81,11 +103,16 @@ router.delete('/:userId', (req, res) => {
     return res.redirect('/auth/login');
   };
   // Query DB to delete record by ID
-  db.User.findByIdAndDelete(req.params.userId, (err, deletedUser) => {
-    if (err) return console.log(err);
+  db.User.findByIdAndDelete(req.params.userId)
+  .then((deletedUser) => {
+    console.log(deletedUser);
 
     // Redirect to index route
     res.redirect('/users');
+  })
+  .catch((err) => {
+    console.log(err);
+    res.render('404');
   });
 });
 
