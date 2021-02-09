@@ -8,6 +8,8 @@ const db = require('../models');
 // Recipe Home Route
 router.get('/', (req, res) => {
   db.Recipe.find().then(recipes => {
+    if (err) return console.log(err);
+
     console.log(recipes);
     res.render('recipes', {recipes});
   });
@@ -19,6 +21,8 @@ router.get('/new', (req, res) => {
     return res.redirect('/users');
   };
   db.User.find().then(users => {
+    if (err) return console.log(err);
+
     
     res.render('recipes/new', {users});
   })
@@ -61,8 +65,12 @@ router.post('/new', (req, res) => {
 router.get('/:recipeId', (req, res) => {
   // Query DB for recipe
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
+    if (err) return console.log(err);
+
 
   db.User.findById(foundRecipe.user, (err, foundUser) => {
+    if (err) return console.log(err);
+
     const context = {
       recipe: foundRecipe,
       user: foundUser,
@@ -79,6 +87,8 @@ router.get('/:recipeId/edit', (req, res) => {
   };
 
   db.Recipe.findById(req.params.recipeId, (err, foundRecipe) => {
+    if (err) return console.log(err);
+
     const context = {
       recipe: foundRecipe,
     };
